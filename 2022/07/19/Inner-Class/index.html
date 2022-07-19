@@ -4,15 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>LitterQer</title>
+  <title>Inner Class | LitterQer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="LitterQer both cute and handsome">
-<meta property="og:type" content="website">
-<meta property="og:title" content="LitterQer">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="内部类内部类，顾名思义就是把一个java类放在另外一个java中。但是根据不同的使用场景，一般把内部类分成一下四种类型。  成员内部类 局部内部类 静态内部类 匿名内部类  无论是哪一种内部类都共同符合一下的访问规则  内部类可以直接访问外部类的成员，包括private fields 外部类如想访问内部类的成员，则必须要实例化一个对象  以上的规则在碰到static的时候会稍有所变化，但是基本原则">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Inner Class">
+<meta property="og:url" content="http://example.com/2022/07/19/Inner-Class/index.html">
 <meta property="og:site_name" content="LitterQer">
-<meta property="og:description" content="LitterQer both cute and handsome">
+<meta property="og:description" content="内部类内部类，顾名思义就是把一个java类放在另外一个java中。但是根据不同的使用场景，一般把内部类分成一下四种类型。  成员内部类 局部内部类 静态内部类 匿名内部类  无论是哪一种内部类都共同符合一下的访问规则  内部类可以直接访问外部类的成员，包括private fields 外部类如想访问内部类的成员，则必须要实例化一个对象  以上的规则在碰到static的时候会稍有所变化，但是基本原则">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-07-19T03:53:41.000Z">
+<meta property="article:modified_time" content="2022-07-19T03:54:07.598Z">
 <meta property="article:author" content="Litterqer">
 <meta name="twitter:card" content="summary">
   
@@ -75,9 +77,7 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-Inner-Class" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-Inner-Class" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/07/19/Inner-Class/" class="article-date">
   <time class="dt-published" datetime="2022-07-19T03:53:41.000Z" itemprop="datePublished">2022-07-19</time>
@@ -90,8 +90,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/07/19/Inner-Class/">Inner Class</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      Inner Class
     </h1>
   
 
@@ -149,121 +149,19 @@
     </footer>
   </div>
   
-</article>
-
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-Java-basic-1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/07/18/Java-basic-1/" class="article-date">
-  <time class="dt-published" datetime="2022-07-18T03:51:18.000Z" itemprop="datePublished">2022-07-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/07/18/Java-basic-1/">Java-basic-1</a>
-    </h1>
+    <a href="/2022/07/18/Java-basic-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Java-basic-1</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="今日任务"><a href="#今日任务" class="headerlink" title="今日任务"></a>今日任务</h3><p>本次任务只使用了基础的class类型，没有abstract，也没有继承。</p>
-<p>a) fields &amp; final关键字</p>
-<p>fields在java class中基本类似于一个类的properties。<br>大部分情况下，每一个field都定义了这个类的不同属性。比如本次实现的<br>餐厅类中</p>
-<blockquote>
-<p>名字、种类、地址等都是餐厅本身具备的属性<br><img src="/.reflection_images/img.png" alt="img.png"></p>
-</blockquote>
-<p>定义fields的时候一般使用private作为access modifier，这里主要的<br>原因是封装。外部无法直接调用和修改一个类的变量，只能通过setter和getter<br>来进行赋值和提取。<br><br>除此以外本次任务中的<code>id2Dishes</code>变量使用了final来限制修改应用对象，这里比较有意思的地方很多。<br>我大概看了很多解释，final关键字指定了一个变量无法被修改，但是为什么final hashmap，arraylist，<br>甚至array仍然可以添加和删除呢？<br>原因主要由一下几个点</p>
-<blockquote>
-<p>final虽然规定了变量不可被修改，但是其实它所指定的是reference不可被修改。<br>也就是说当创建array或者arraylist这些变量的时候，实际上是在内存空间中给这些变量确定了一个地址。<br>当使用final定义的这些变量的时候，final keyword会确保指针指向的这个内存地址不可更改。<br>也就是说虽然我给某个array添加或者删除了某些元素，但是这个array在内存的地址并没有发生改变。<br>所以实际上并没有影响final所限制的reference，因此不会报错。但是当我使用primitive类型的变量时，<br>在内存空间中，改变这个变量的值就类似于改变地址，所以final关键字会限制改动。<br>以下截图证明了primitive类型和其他类型的区别：<br><img src="/.reflection_images/finalkeyword.png"> <br><br>很明显，primitive类型的变量被final修饰后就不肯更改，而array和string任然可以被更改。</p>
-</blockquote>
-<p>但是final修饰的类中，String是比较特别的。String的源码中虽然被final修饰但是仍然可以被修改，但是其实string并不是被修改了。<br>而是被替换了指向的地址——也就是创建了一个新的String。我尝试通过反编译的方法去看，是否创建了新的string，但是结果表明反编译不能直接看出String的地址变化。<br>所以我尝试找源码中的一些线索。比如下面这张图中的substring源码，我们会发现其实使用substring并不是改变了string本身的值，<br>而是创建了一个新的string，并且把老的变量指向这个新的string。<br><img src="/.reflection_images/substring.png"></p>
-<p>b) methods</p>
-<p>基本的getter和setter目前没有碰到什么实际操作上的问题，所以就略过了。<br>剩下的就是本次任务实现的两个方法。两个方法的输出均为void。<br></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">public void order(ArrayList&lt;String&gt; orders)&#123;</span><br><span class="line">    this.id++;</span><br><span class="line">    id2Dishes.put(this.id,orders);</span><br><span class="line">    StringBuilder str = new StringBuilder();</span><br><span class="line">    str.append(&quot;You&#x27;ve ordered the following: \n&quot;);</span><br><span class="line">    int i = 1;</span><br><span class="line">    for (String order :orders) &#123;</span><br><span class="line">        str.append(MessageFormat.format(&quot;Dish &#123;0&#125;: &#123;1&#125;\n&quot;,i,order));</span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">    str.append(MessageFormat.format(</span><br><span class="line">        &quot;Thank you for your order!&quot; +</span><br><span class="line">        &quot;Your order id is: &#123;0&#125;\n&quot;,this.id.toString()));</span><br><span class="line">    System.out.println(str);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">public void serving(Integer orderId)&#123;</span><br><span class="line">        StringBuilder str = new StringBuilder();</span><br><span class="line">        if (this.id2Dishes.get(orderId) != null)&#123;</span><br><span class="line">            ArrayList&lt;String&gt; orders = this.id2Dishes.get(orderId);</span><br><span class="line">            str.append(&quot;Now serving:\n&quot;);</span><br><span class="line">            for (String order :orders) &#123;</span><br><span class="line">                str.append(MessageFormat.format(&quot;Dish &#123;0&#125;\n&quot;,order));</span><br><span class="line">            &#125;</span><br><span class="line">            str.append(&quot;All dishes have been served. Thank you!\n&quot;);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            str.append(&quot;Invalid order id\n&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(str);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>在order方法中，因为餐馆id在定义的时候使用了Integer而不是int，所以要先转为string类在输出。<br>这里使用Integer的原因也是考虑，一个餐馆如果order id一直是自增的情况下，可能会无限大，Integer的取值范围会比较合适。<br>其他需要的注意的点和前几天的内容差不多，使用StringBuilder优化效率，利用format增加可读性。<br>利用java foreach语法糖简化loop的编写形式。在实现这些方法的时候除了代码上的考量，其实逻辑上的思考会更多一点。<br></p>
-<p>比如在order中，我让order id先进行自增在放入hashmap，这样做虽然保证了order id一定不会乱掉，而且也不可能出现hashmap撞key的问题。<br>但是如果代码在运行中出错，一直重复前两行的话，那么id会一直自增，并且加入了重复的订单。这里可以通过加入一些类似与锁的逻辑，避免这个问题。<br>比如在放入hashmap前验证上一个单子是有效单，或者先确认上一个单号是非重复的（不同的订单内容，下单时间，下单人等）。<br></p>
-<p>还有在serving中，如果模拟真实场景的话，要如何保证不会重复上菜，或者如果上菜上到一半系统中段了，如何能够保持数据。<br>在这部分中，我一共有两个思路</p>
-<blockquote>
-<p>第一种是直接使用另外一个hashmap来记录上菜情况，这个也应该用<code>final</code>来修饰。保证不会被随意替换。<br>但是这种方式会加大内存的压力，所以不是很好。而且不能分辨已经上过的菜。<br><br>第二种是在serving中每上一个菜就在这个菜的前面加入一个flag来表示已经上过了。也就是说ArrayList打印的结果应该如下：<br><br><code>[&quot;served&quot;,&quot;a&quot;,&quot;served&quot;,&quot;b&quot;,&quot;c&quot;]</code> <br><br>这里就可以很清晰的看出c还没有上，而其他的菜已经上了。但是这里又会出现一个问题，我无法直接判断菜是否上齐了。<br>所以当所有菜上齐的时候应该加入一个特殊的flag表示菜全部上齐，并且添加到arraylist的最前面作为判定条件。</p>
-<p>PS: 这里如果使用arraylist的话可能会出现，如果上菜顺序不一致导致效率低的问题。<br>比如b比a先上，那么需要查询b的index，然后在b的前面先添加served。</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/07/18/Java-basic-1/" data-id="cl5q7n32f0000mssp50ijgnji" data-title="Java-basic-1" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/07/18/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2022-07-18T03:44:28.578Z" itemprop="datePublished">2022-07-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/07/18/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/07/18/hello-world/" data-id="cl5q7fpum0000a0spc1hc9rcc" data-title="Hello World" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
 </section>
