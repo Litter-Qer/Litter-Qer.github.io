@@ -72,7 +72,7 @@
       
         <li class="list-item">
           
-            <a href="/" class="item-link active">Home</a>
+            <a href="/" class="item-link">Home</a>
           
         </li>
       
@@ -112,7 +112,7 @@
         
           <li class="menu-item">
             
-              <a href="/" class="menu-link mobile-active">Home</a>
+              <a href="/" class="menu-link">Home</a>
             
           </li>
         
@@ -163,61 +163,43 @@
   </div>
 </header>
 
-    <main class="app-body">
+    <div id="article-banner">
+  <h2>Archives</h2>
+  <p class="post-date">Archives</p>
+</div>
+<main class="app-body" id="archives">
   
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2022/07/19/Inner-Class/">Inner Class</a>
-      </h2>
-      <p class="article-date">July 19, 2022</p>
-      
-      <div class="article-summary">
-        
-          内部类内部类，顾名思义就是把一个java类放在另外一个java中。但是根据不同的使用场景，一般把内部类分成一下四种类型。
-
-成员内部类
-局部内部类
-静态内部类
-匿名内部类
-
-无论是哪一种内部类都共同符合一下的访问规则
-
-内部类可以直接访问外部类的成员，包括private fields
-外部类 ...
-        
+  
+  
+    <section class="time-section">
+  <h1 class="section-year">
+    2022
+  </h1>
+  <div class="section-list">
+    
+    
+      <div class="section-list-item">
+        <a href="/2022/07/19/Inner-Class/" class="archive-title">Inner Class</a>
+        <p class="archive-date">07-19</p>
       </div>
-      <a class="more" href="/2022/07/19/Inner-Class/">Read more</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2022/07/18/Java-basic-1/">Java-basic-1</a>
-      </h2>
-      <p class="article-date">July 18, 2022</p>
-      
-        
-  <a href="/tags#Java" >
-    <span class="tag-code">Java</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          今日任务本次任务只使用了基础的class类型，没有abstract，也没有继承。
-a) fields &amp; final关键字
-fields在java class中基本类似于一个类的properties。大部分情况下，每一个field都定义了这个类的不同属性。比如本次实现的餐厅类中
-
-名 ...
-        
+    
+      <div class="section-list-item">
+        <a href="/2022/07/18/Java-basic-1/" class="archive-title">Java-basic-1</a>
+        <p class="archive-date">07-18</p>
       </div>
-      <a class="more" href="/2022/07/18/Java-basic-1/">Read more</a>
-    </article>
-  
-
+    
+  </div>
+</section>
   
 </main>
 
-
+<script>
+  (function () {
+    var url = 'http://example.com/tags/Java/index.html';
+    $('#article-banner').geopattern(url);
+    $('.header').removeClass('fixed-header');
+  })();
+</script>
     <div class="scroll-top">
   <span class="arrow-icon"></span>
 </div>

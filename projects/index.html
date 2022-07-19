@@ -10,7 +10,7 @@
   
   <title>
     
-      LitterQer
+      projects | LitterQer
     
   </title>
   <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -72,7 +72,7 @@
       
         <li class="list-item">
           
-            <a href="/" class="item-link active">Home</a>
+            <a href="/" class="item-link">Home</a>
           
         </li>
       
@@ -112,7 +112,7 @@
         
           <li class="menu-item">
             
-              <a href="/" class="menu-link mobile-active">Home</a>
+              <a href="/" class="menu-link">Home</a>
             
           </li>
         
@@ -163,59 +163,111 @@
   </div>
 </header>
 
-    <main class="app-body">
+    <div id="article-banner">
+  <h2>projects</h2>
+  <p class="post-date">2022-07-19</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><p>测试projects<br>目前没有任何东西</p>
+</section>
+    <!-- Tags START -->
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- Utterances START -->
+      <div id="utterances"></div>
+      <script src="https://utteranc.es/client.js"
+        repo=""
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async></script>    
+      <!-- Utterances END -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
   
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2022/07/19/Inner-Class/">Inner Class</a>
-      </h2>
-      <p class="article-date">July 19, 2022</p>
-      
-      <div class="article-summary">
-        
-          内部类内部类，顾名思义就是把一个java类放在另外一个java中。但是根据不同的使用场景，一般把内部类分成一下四种类型。
-
-成员内部类
-局部内部类
-静态内部类
-匿名内部类
-
-无论是哪一种内部类都共同符合一下的访问规则
-
-内部类可以直接访问外部类的成员，包括private fields
-外部类 ...
-        
-      </div>
-      <a class="more" href="/2022/07/19/Inner-Class/">Read more</a>
-    </article>
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="nav">none</ol>
+    
+  </div>
+</aside>
   
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2022/07/18/Java-basic-1/">Java-basic-1</a>
-      </h2>
-      <p class="article-date">July 18, 2022</p>
-      
-        
-  <a href="/tags#Java" >
-    <span class="tag-code">Java</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          今日任务本次任务只使用了基础的class类型，没有abstract，也没有继承。
-a) fields &amp; final关键字
-fields在java class中基本类似于一个类的properties。大部分情况下，每一个field都定义了这个类的不同属性。比如本次实现的餐厅类中
-
-名 ...
-        
-      </div>
-      <a class="more" href="/2022/07/18/Java-basic-1/">Read more</a>
-    </article>
-  
-
-  
+  <!-- Catalog END -->
 </main>
+
+<script>
+  (function () {
+    var url = 'http://example.com/projects/index.html';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', '/css/images/error_icon.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== '/css/images/error_icon.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
 
 
     <div class="scroll-top">
