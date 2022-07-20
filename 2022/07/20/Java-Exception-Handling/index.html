@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="LitterQer both cute and handsome">
+  <meta name="keyword" content="java, mySQL">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      Java Exception Handling | LitterQer
+    
+  </title>
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+  
+  
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+  
+  
+    
+<script src="/js/local-search.js"></script>
+
+
+<meta name="generator" content="Hexo 6.2.0"></head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>LitterQer</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">Projects</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+      
+        <li class="menu-item menu-item-search right-list">
+    <a role="button" class="popup-trigger">
+        <i class="fa fa-search fa-fw"></i>
+    </a>
+</li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">Projects</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+    
+      <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+            <span class="search-icon">
+                <i class="fa fa-search"></i>
+            </span>
+            <div class="search-input-container">
+                <input autocomplete="off" autocapitalize="off"
+                    placeholder="Please enter your keyword(s) to search." spellcheck="false"
+                    type="search" class="search-input">
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa fa-times-circle"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+    
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>Java Exception Handling</h2>
+  <p class="post-date">2022-07-20</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="异常处理机制"><a href="#异常处理机制" class="headerlink" title="异常处理机制"></a>异常处理机制</h1><p>java中的异常处理机制虽然很清晰，但是分支众多。这次的反思可能只谈到一些用的比较多的。</p>
+<h2 id="简单的异常处理"><a href="#简单的异常处理" class="headerlink" title="简单的异常处理"></a>简单的异常处理</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">divide</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">Scanner</span> <span class="variable">scanner</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">    System.out.print(<span class="string">&quot;Enter numerator: &quot;</span>);</span><br><span class="line">    <span class="type">int</span> <span class="variable">nm</span> <span class="operator">=</span> scanner.nextInt();</span><br><span class="line">    System.out.print(<span class="string">&quot;Enter denominator: &quot;</span>);</span><br><span class="line">    <span class="keyword">if</span>(scanner.hasNextInt())&#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">dm</span> <span class="operator">=</span> scanner.nextInt();</span><br><span class="line">        <span class="keyword">if</span> (dm==<span class="number">0</span>)&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;Denominator cannot be 0, safely exit...&quot;</span>);</span><br><span class="line">            System.exit(<span class="number">1</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(MessageFormat.format(</span><br><span class="line">                    <span class="string">&quot;&#123;0&#125;/&#123;1&#125; = &#123;2&#125;&quot;</span>,</span><br><span class="line">                    nm, dm, nm / dm));</span><br><span class="line">            System.out.println(<span class="string">&quot;Thanks&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Denominator is not an integer, safely exit...&quot;</span>);</span><br><span class="line">        System.exit(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上描述的例子并没有使用任何的throw或者try catch, 而是单纯的预判可能出现的错误并且使用类似于硬编码的形式来解决问题。同时也没有提供任何解决方案。<br>这里使用了System.exit()来模拟error code。<br>这种方法也不能说完全的不好，我细想了一下，对于比较简单的异常处理其实使用这个反而更便捷，因为有可能的异常其实都已经提前知晓了。但是确实，使用这种方案如果有遗漏的异常依旧无法解决。<br>而且可能整体的代码一致性也得不到保障。</p>
+<h2 id="异常分类"><a href="#异常分类" class="headerlink" title="异常分类"></a>异常分类</h2><p>Java中的异常体系可以说还是很清晰的。所有的异常都继承Throwable这个类，而具体异常又会被分为Error和Exception。下面我会分别研究这个两个异常。这里我们先看Throwable这个类。</p>
+<h3 id="Throwable"><a href="#Throwable" class="headerlink" title="Throwable"></a>Throwable</h3><p>为了深入交接java中的异常处理机制，搞懂throwable的原理是必要的。</p>
+<h4 id="内部结构"><a href="#内部结构" class="headerlink" title="内部结构"></a>内部结构</h4><p>首先throwable实现了序列化接口，保证了它本身可以直接被存储或者转移。这里的主要原因还是说throwable在大部分情况下需要被直接输出，方便程序员进行检测。<br>然后今天才发现了一个新的关于JVM的编译规则。如果一个类没有继承任何类，那么JVM就会自动给他分配成Object类的子类。（之前一直都疏忽了）<br>同时它也被error和exception这两个类继承。error一般指的是java或者JVM内部的异常信息，而exception更多是程序本身的一些异常（比如设计缺陷之类的）。</p>
+<h4 id="运行逻辑"><a href="#运行逻辑" class="headerlink" title="运行逻辑"></a>运行逻辑</h4><p>在throwable的源码中可以看到这样的语句</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> StackTraceElement[] UNASSIGNED_STACK = <span class="keyword">new</span> <span class="title class_">StackTraceElement</span>[<span class="number">0</span>];</span><br><span class="line"><span class="keyword">private</span> StackTraceElement[] stackTrace = UNASSIGNED_STACK;</span><br></pre></td></tr></table></figure>
+
+<p>这里实际上解释了throwable是如何追踪异常的。throwable内部通过使用<code>getOurStackTrace</code>来获取栈上的异常信息，并遍历所有的异常信息。</p>
+<h4 id="构造器"><a href="#构造器" class="headerlink" title="构造器"></a>构造器</h4><p>throwable的构造器并不复杂，主要影响构造的是这两个参数————<code>detailMessage</code>,<code>cause</code>。  </p>
+<ol>
+<li><p><code>detailMessage</code><br>这个变量主要记录了throwable的信息，可以是人为定义的信息，比如第一个例子中的输出。一般来说这个信息是程序员读懂异常的关键。</p>
+</li>
+<li><p><code>cause</code><br>这个变量主要是记录异常出现的原因，这里的原因通常指的是其他的异常或者null。</p>
+</li>
+</ol>
+<p>在构造器中，一般把以上的两种变量放入就足够了，但是java 7之后又提供了一个新的构造器，其中可以调整Suppression和StackTrace的状态。不过目前还没有使用到涉及这两个功能，所以暂时没研究。</p>
+<h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><p>基本上throwable中的方法都是一些打印和获取的工作，没有什么特别的地方。相对值得一提的就是initCause这个方法，它主要初始化了一个throwable的起因为定值。</p>
+<h3 id="Error"><a href="#Error" class="headerlink" title="Error"></a>Error</h3><p>Error描述了java运行时系统的内部错误和资源耗尽错误。也就是说，实际上error不应该存在于程序。而且如果出现error那么java也时无法处理的。<br>error的源码就是throwable的再利用。基本上就是把throwable所有的构造器继承了一遍，向下转置成了Error类型。目前基本没怎么碰上过，除了测动态数组那次因为JVM初始内存的问题，<br>调整过一次。</p>
+<h3 id="Exception"><a href="#Exception" class="headerlink" title="Exception"></a>Exception</h3><p>Exception就是日常会出现的异常了。它也主要分为两类————IOException和RuntimeException。它的基本源码和Error完全一致，就是向下转置成Exception，所以就略过了。</p>
+<h4 id="IOException"><a href="#IOException" class="headerlink" title="IOException"></a>IOException</h4><p>顾名思义，就是输入输出时会出现的异常。一般表现在编译阶段就会被要求解决。常见的有IO，SQL异常，也就是由语法或者外部因素导致的异常。<br>基本上这类异常应该在程序运行前就被处理好，事实上javac也有类似的检测机制，强制要求解决。</p>
+<ol start="2">
+<li>FileNotFoundException 文件找不到（文件名或者path不对）</li>
+<li>ClassNotFoundException 类找不到 （类不存在或者包没有导入）</li>
+<li>SQLException （SQL语句不对，数据库链接失败等）</li>
+<li>NoSuchFieldException 文件不存在</li>
+<li>NoSuchMethodException 方法不存在</li>
+</ol>
+<p>以上的这些异常都属于IOException，而javac在编写程序阶段就会提示开发者必须处理或者抛出这些异常。</p>
+<h4 id="RuntimeException"><a href="#RuntimeException" class="headerlink" title="RuntimeException"></a>RuntimeException</h4><p>这种类型的异常基本上写程序一定会碰上，有时候可能就是代码里的bug或者是程序设计时的问题。常见的种类有很多很多，<br>比如NullPointerException,IndexOutOfBoundException等。此类异常无法被javac检查出来，所以需要开发者自己进行处理。</p>
+<h2 id="异常关键字"><a href="#异常关键字" class="headerlink" title="异常关键字"></a>异常关键字</h2><p>基本上java有五种异常关键字，其中try，catch，finally一般归为一类，而throw和throws可以归为一类。</p>
+<ul>
+<li>try用于监听异常，一般是把可能出现异常的代码放入try代码块中。如果出现了异常就抛出或者使用catch来处理。</li>
+<li>catch用于捕获和处理异常，一般是把在try代码块出现的异常找到并且在catch的代码块来解决这个问题。同一个try可以对应很多个不同的catch。</li>
+<li>finally由于回收在try和catch中使用的资源，因为finally代码块无论什么情况一定会被执行。也就是说如果try和catch中出现了return或者throw，但是finally中也有的话，<br>那么finally就会直接打断前面的return。这里下面给出一个具体的例子</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    System.out.println(MessageFormat.format(</span><br><span class="line">    <span class="string">&quot;&#123;0&#125;/&#123;1&#125; = &#123;2&#125;&quot;</span>,</span><br><span class="line">    nm, dm, nm / dm));</span><br><span class="line">&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;Exception happened&quot;</span>);</span><br><span class="line">    System.out.println(e.getMessage());</span><br><span class="line">    <span class="keyword">throw</span> e;</span><br><span class="line">&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;This is a finally block&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>故意输入10和0，触发ArithmeticException。打印的结果如下</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Exception happened</span><br><span class="line">/ by zero</span><br><span class="line">This is a finally block</span><br><span class="line">Exception in thread &quot;main&quot; java.lang.ArithmeticException: / by zero</span><br><span class="line">	at SimpleMath.divide2(SimpleMath.java:21)</span><br><span class="line">	at SimpleMath.main(SimpleMath.java:8)</span><br></pre></td></tr></table></figure>
+
+<p>这里会发现由于finally必须优先于return和throw执行，所以输出中先出现了exception message然后在打印finally里的东西，最终抛出了这个异常。<br>当然反编译结果也可以证明这个过程。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">112 getstatic #24 &lt;java/lang/System.out : Ljava/io/PrintStream;&gt;</span><br><span class="line">115 ldc #59 &lt;This is a finally block&gt;</span><br><span class="line">117 invokevirtual #56 &lt;java/io/PrintStream.println : (Ljava/lang/String;)V&gt;</span><br><span class="line">120 aload 5</span><br><span class="line">122 athrow</span><br><span class="line">123 getstatic #24 &lt;java/lang/System.out : Ljava/io/PrintStream;&gt;</span><br><span class="line">126 ldc #69 &lt;Thanks&gt;</span><br><span class="line">128 invokevirtual #56 &lt;java/io/PrintStream.println : (Ljava/lang/String;)V&gt;</span><br><span class="line">131 return</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>throw 和 throws</li>
+</ul>
+<p>throw和throws的用法比较简单。throw就是直接抛出一个异常，其实就是把异常的信息打印到console。throws的话其实是抛出可能会有的异常，一般放在方法签名中。<br>其实使用英文来理解会比较简单，throws就是方法名的谓语，表示这个方法可能会抛出一些异常（加s表示第三人称单数）。throw就是我自己抛出一个已经发现的异常，<br>直接在后面跟上异常的实例就好了。<br>这里比较常见的就是throws的继承问题，如果子方法（被某一个其他方法调用的方法）需要抛出异常的话，则父方法也必须抛出异常。一般来说抛出异常还是比较少见的，<br>因为如果我都已经发现异常了，为什么不想办法直接解决呢？这里就又出现了新的问题，如果我的程序中出现了不同于java已经定义好的异常的话，我该如果去做。</p>
+<h3 id="关键的使用"><a href="#关键的使用" class="headerlink" title="关键的使用"></a>关键的使用</h3><p>基础的try-catch-finally已在上文中展示过了。下面会使用一种可能在多线程中运用较多的使用方式try-finally。因为还没有正式进入多线程的学习，所以这里只是做了一个小的例子感受一下。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">ReentrantLock</span> <span class="variable">lock</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ReentrantLock</span>();</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;Something needs to be locked&quot;</span>);</span><br><span class="line">&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">    lock.unlock();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面的代码无疑会直接抛出异常，但是这里给了一个很好的提示。在多线程的任务中，如果需要确保某段数据不会被改写，那么使用这种try finally的方式是可以解决的。<br>因为只有try中不抛出任何异常的情况下，才会解锁，并且这里还保证了一定会解锁。但是这种并不代表完全解决了多线程的问题，因为如果finally中的代码抛出异常怎么办？<br>这里java 7之后提供了一种解决方案——AutoCloseable。这个一般结合try-with-resource使用。具体实现可以参考一下例子</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> (<span class="type">Scanner</span> <span class="variable">scanner</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(<span class="keyword">new</span> <span class="title class_">FileInputStream</span>(<span class="string">&quot;a&quot;</span>), StandardCharsets.UTF_8)) &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;Something happens here.&quot;</span>);</span><br><span class="line">&#125; <span class="keyword">catch</span>(Exception e) &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;Exception handling here.&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>由于Scanner实现了AutoCloseable这个接口，所以Scanner会自动关闭。并且如果scanner.close()出现了异常，那么则会被抑制。当系统抛出异常的时候，<br>会直接抛出原有的异常，比如FileNotFoundException。而不会变成IOException。这样的一个好处就是，不会是得异常变乱。比如也许问题本来是IO的，由于抛出的时候不准确，<br>最后导致，一直在想办法解决不想关的异常。当然如果需要看到被抑制的异常，只需要使用<code>getSuppressed</code>即可。</p>
+<h2 id="自定义异常"><a href="#自定义异常" class="headerlink" title="自定义异常"></a>自定义异常</h2><p>实际上由于java的单一继承机制，导致自定义异常变得无比容易。我只需要定位我自建的异常大致属于哪一类，就可以通过继承对应的父类来实现自定义。<br>一般情况下，遵循异常的构造规则会在自定义的异常里面放入两个不同构造器——无参和msg的构造器。当然我们也可能改写或者加入一些自己需要的方法来处理或者解释这个异常。</p>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#Java" >
+    <span class="tag-code">Java</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2022/07/19/Inner-Class/">
+        <span class="nav-arrow">← </span>
+        
+          Inner Class
+        
+      </a>
+    
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- Utterances START -->
+      <div id="utterances"></div>
+      <script src="https://utteranc.es/client.js"
+        repo=""
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async></script>    
+      <!-- Utterances END -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6"><span class="toc-nav-text">异常处理机制</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%AE%80%E5%8D%95%E7%9A%84%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86"><span class="toc-nav-text">简单的异常处理</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%BC%82%E5%B8%B8%E5%88%86%E7%B1%BB"><span class="toc-nav-text">异常分类</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Throwable"><span class="toc-nav-text">Throwable</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%86%85%E9%83%A8%E7%BB%93%E6%9E%84"><span class="toc-nav-text">内部结构</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E8%BF%90%E8%A1%8C%E9%80%BB%E8%BE%91"><span class="toc-nav-text">运行逻辑</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E6%9E%84%E9%80%A0%E5%99%A8"><span class="toc-nav-text">构造器</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-nav-text">方法</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Error"><span class="toc-nav-text">Error</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Exception"><span class="toc-nav-text">Exception</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#IOException"><span class="toc-nav-text">IOException</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#RuntimeException"><span class="toc-nav-text">RuntimeException</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%BC%82%E5%B8%B8%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-nav-text">异常关键字</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%B3%E9%94%AE%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-nav-text">关键的使用</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BC%82%E5%B8%B8"><span class="toc-nav-text">自定义异常</span></a></li></ol></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://example.com/2022/07/20/Java-Exception-Handling/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', '/css/images/error_icon.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== '/css/images/error_icon.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2022 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a target="_blank" rel="noopener" href="https://github.com/yanm1ng">yanm1ng</a>
+    
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      hljs.configure({useBR: true});
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+
+<script src="/js/script.js"></script>
+
+
+  </body>
+</html>
