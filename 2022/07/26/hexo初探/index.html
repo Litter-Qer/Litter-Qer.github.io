@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="LitterQer both cute and handsome">
+  <meta name="keyword" content="java, mySQL">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      Hexo初探 | LitterQer
+    
+  </title>
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+  
+  
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+  
+  
+    
+<script src="/js/local-search.js"></script>
+
+
+<meta name="generator" content="Hexo 6.2.0"></head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>LitterQer</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">Projects</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+      
+        <li class="menu-item menu-item-search right-list">
+    <a role="button" class="popup-trigger">
+        <i class="fa fa-search fa-fw"></i>
+    </a>
+</li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">Projects</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+    
+      <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+            <span class="search-icon">
+                <i class="fa fa-search"></i>
+            </span>
+            <div class="search-input-container">
+                <input autocomplete="off" autocapitalize="off"
+                    placeholder="Please enter your keyword(s) to search." spellcheck="false"
+                    type="search" class="search-input">
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa fa-times-circle"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+    
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>Hexo初探</h2>
+  <p class="post-date">2022-07-26</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="Hexo-初探"><a href="#Hexo-初探" class="headerlink" title="Hexo 初探"></a>Hexo 初探</h1><p>Hexo 就是一个将markdown转译成blog的工具。基本上，只要输入一个markdown文件，Hexo就可以将其转译成一个blog。它实际上就是静态页面。</p>
+<h2 id="开发环境与配置"><a href="#开发环境与配置" class="headerlink" title="开发环境与配置"></a>开发环境与配置</h2><h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><p>Hexo不需要很复杂的开发环境，基本上只需要三个工具</p>
+<ul>
+<li>Git</li>
+<li>Node.js</li>
+<li>Hexo</li>
+</ul>
+<p>基本安装的话，就参考官网的一个<a target="_blank" rel="noopener" href="https://hexo.io/docs/">教程</a>即可<br>由于安装过于简单，所以就直接略过了。</p>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>Hexo中可修改的配置有很多，基本都放置在_config.yml里面。使用IDEA打开即可修改。关于具体配置的修改我放在后面详述。</p>
+<blockquote>
+<p>注意：Hexo使用的配置文件的格式是.yml<br>我们也可以自己写config，只要用<code>$ hexo server --config custom.ymln</code>把写好的config配置给hexo就可以了<br>配置文件里面的东西大多数都是字面意思，后面我会把一些有些小坑的地方标注出来。</p>
+</blockquote>
+<h2 id="初试hexo"><a href="#初试hexo" class="headerlink" title="初试hexo"></a>初试hexo</h2><p>使用hexo真的很简单，比git都好学。首先在本地创建一个空文件夹，然后在这个文件夹下直接开启git bash（这里最好用git bash）。<br>在git bash中输入以下命令直接初始化一个hexo文件夹。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init &lt;filename&gt; </span><br></pre></td></tr></table></figure>
+
+<p>这个init命令实际上就是clone hexo-starter的内容（官方的github）。观察创建的文件夹，会发现一共有5个目录，我们来逐一分析每个目录。  </p>
+<img src="/2022/07/26/hexo%E5%88%9D%E6%8E%A2/hexo_init.png" class="" title="This is an example image">
+
+<h3 id="github"><a href="#github" class="headerlink" title=".github"></a>.github</h3><p>github自己的一个管理文件，里面也只有一个文件dependabot.yml。放都是关于依赖的问题，可以直接略过。</p>
+<h3 id="node-modules"><a href="#node-modules" class="headerlink" title=".node_modules"></a>.node_modules</h3><p>node.js自己生成的文件，一般用来管理各种需要用到的插件。不需要特别注意</p>
+<h3 id="scaffolds"><a href="#scaffolds" class="headerlink" title="scaffolds"></a>scaffolds</h3><p>页面的template，可以后期自己加入。一般初始化的时候会给出三个，draft，page和post。draft就是一个在本地使用的页面，page就是一个自定义个页面，post就是需要放入的博客内容。<br>模板本身支持直接修改。</p>
+<h3 id="source"><a href="#source" class="headerlink" title="source"></a>source</h3><p>这里存放的是所有已生成的页面和页面的附件，比如图片之类的。hexo在处理图片的时候和一般的markdown格式有一些小的区别。</p>
+<h3 id="themes"><a href="#themes" class="headerlink" title="themes"></a>themes</h3><p>不同的主题，初始化的时候里面只有一个git文件。后面需要换主题的时候直接把主题clone到themes文件夹下就好了。</p>
+<h2 id="具体配置文件"><a href="#具体配置文件" class="headerlink" title="具体配置文件"></a>具体配置文件</h2><p>直接在git bash中使用<code>hexo s</code>，这个指令可以在本地运行一个实时更新的博客。不出意外的话应该会有一个经典hello world的post。<br>主题也是默认的landscape。回到刚才的blog文件夹，此时我们可以观察<code>_config.yml</code>这个文件。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Hexo Configuration</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/configuration.html</span></span><br><span class="line"><span class="comment">## Source: https://github.com/hexojs/hexo/</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Hexo</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="attr">keywords:</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">John</span> <span class="string">Doe</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">en</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## Set your site url here. For example, if you use GitHub Page, set url as &#x27;https://username.github.io/project&#x27;</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">http://example.com</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:title/</span></span><br><span class="line"><span class="attr">permalink_defaults:</span></span><br><span class="line"><span class="attr">pretty_urls:</span></span><br><span class="line">  <span class="attr">trailing_index:</span> <span class="literal">true</span> <span class="comment"># Set to false to remove trailing &#x27;index.html&#x27; from permalinks</span></span><br><span class="line">  <span class="attr">trailing_html:</span> <span class="literal">true</span> <span class="comment"># Set to false to remove trailing &#x27;.html&#x27; from permalinks</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Directory</span></span><br><span class="line"><span class="attr">source_dir:</span> <span class="string">source</span></span><br><span class="line"><span class="attr">public_dir:</span> <span class="string">public</span></span><br><span class="line"><span class="attr">tag_dir:</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">archive_dir:</span> <span class="string">archives</span></span><br><span class="line"><span class="attr">category_dir:</span> <span class="string">categories</span></span><br><span class="line"><span class="attr">code_dir:</span> <span class="string">downloads/code</span></span><br><span class="line"><span class="attr">i18n_dir:</span> <span class="string">:lang</span></span><br><span class="line"><span class="attr">skip_render:</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Writing</span></span><br><span class="line"><span class="attr">new_post_name:</span> <span class="string">:title.md</span> <span class="comment"># File name of new posts</span></span><br><span class="line"><span class="attr">default_layout:</span> <span class="string">post</span></span><br><span class="line"><span class="attr">titlecase:</span> <span class="literal">false</span> <span class="comment"># Transform title into titlecase</span></span><br><span class="line"><span class="attr">external_link:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span> <span class="comment"># Open external links in new tab</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">site</span> <span class="comment"># Apply to the whole site</span></span><br><span class="line">  <span class="attr">exclude:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="attr">filename_case:</span> <span class="number">0</span></span><br><span class="line"><span class="attr">render_drafts:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">relative_link:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">future:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">highlight:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">line_number:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">auto_detect:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">tab_replace:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line">  <span class="attr">wrap:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">hljs:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">prismjs:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">preprocess:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">line_number:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">tab_replace:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Home page setting</span></span><br><span class="line"><span class="comment"># path: Root path for your blogs index page. (default = &#x27;&#x27;)</span></span><br><span class="line"><span class="comment"># per_page: Posts displayed per page. (0 = disable pagination)</span></span><br><span class="line"><span class="comment"># order_by: Posts order. (Order by date descending by default)</span></span><br><span class="line"><span class="attr">index_generator:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line">  <span class="attr">per_page:</span> <span class="number">10</span></span><br><span class="line">  <span class="attr">order_by:</span> <span class="string">-date</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Category &amp; Tag</span></span><br><span class="line"><span class="attr">default_category:</span> <span class="string">uncategorized</span></span><br><span class="line"><span class="attr">category_map:</span></span><br><span class="line"><span class="attr">tag_map:</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Metadata elements</span></span><br><span class="line"><span class="comment">## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta</span></span><br><span class="line"><span class="attr">meta_generator:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Date / Time format</span></span><br><span class="line"><span class="comment">## Hexo uses Moment.js to parse and display date</span></span><br><span class="line"><span class="comment">## You can customize the date format as defined in</span></span><br><span class="line"><span class="comment">## http://momentjs.com/docs/#/displaying/format/</span></span><br><span class="line"><span class="attr">date_format:</span> <span class="string">YYYY-MM-DD</span></span><br><span class="line"><span class="attr">time_format:</span> <span class="string">HH:mm:ss</span></span><br><span class="line"><span class="comment">## updated_option supports &#x27;mtime&#x27;, &#x27;date&#x27;, &#x27;empty&#x27;</span></span><br><span class="line"><span class="attr">updated_option:</span> <span class="string">&#x27;mtime&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Pagination</span></span><br><span class="line"><span class="comment">## Set per_page to 0 to disable pagination</span></span><br><span class="line"><span class="attr">per_page:</span> <span class="number">10</span></span><br><span class="line"><span class="attr">pagination_dir:</span> <span class="string">page</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Include / Exclude file(s)</span></span><br><span class="line"><span class="comment">## include:/exclude: options only apply to the &#x27;source/&#x27; folder</span></span><br><span class="line"><span class="attr">include:</span></span><br><span class="line"><span class="attr">exclude:</span></span><br><span class="line"><span class="attr">ignore:</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">landscape</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>下面我会分成不同的部分进行讨论。</p>
+<h3 id="site配置"><a href="#site配置" class="headerlink" title="site配置"></a>site配置</h3><table>
+<thead>
+<tr>
+<th>变量名</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>title</td>
+<td>网站标题</td>
+</tr>
+<tr>
+<td>subtitle</td>
+<td>副标题</td>
+</tr>
+<tr>
+<td>description</td>
+<td>描述</td>
+</tr>
+<tr>
+<td>keywords</td>
+<td>关键词</td>
+</tr>
+<tr>
+<td>author</td>
+<td>作者</td>
+</tr>
+<tr>
+<td>language</td>
+<td>使用语言</td>
+</tr>
+<tr>
+<td>timezone</td>
+<td>时区</td>
+</tr>
+</tbody></table>
+<p>这里没有什么需要解释的，就是根据需要直接进行修改就好了。这里唯一的小坑就是网站描述一般不会出现在页面中，<br>而是写在网站的源码内部。主要的作用是优化搜索结果的，所以如果想提高点击量的话，这个描述还是有点作用的。语言的话有一个特别支持多国语言的选项。</p>
+<h3 id="URL设置"><a href="#URL设置" class="headerlink" title="URL设置"></a>URL设置</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">url:</span> <span class="string">http://example.com</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:title/</span></span><br><span class="line"><span class="attr">permalink_defaults:</span></span><br><span class="line"><span class="attr">pretty_urls:</span></span><br><span class="line"><span class="attr">trailing_index:</span> <span class="literal">true</span> <span class="comment"># Set to false to remove trailing &#x27;index.html&#x27; from permalinks</span></span><br><span class="line"><span class="attr">trailing_html:</span> <span class="literal">true</span> <span class="comment"># Set to false to remove trailing &#x27;.html&#x27; from permalinks</span></span><br></pre></td></tr></table></figure>
+
+<p>这里第一个就是设置网站的URL，这个地方系统推荐的是写成username.github.io&#x2F;project。根据我的实测经验，如果没有project这个页面类的话，网站就可以读出来，但是会变成乱码，或者不读css文件。<br>建议写成username.github.io就可以了。当然如果使用gitlab也是一样的。<br>permalink的话就是文章的永久链接格式，这和也不需要修改，本身就已经很不错了。如果需要改的话，它支持的格式都在文档中有写好了。这个部分如果需要上线评论功能的话，则会比较重要，因为其中有一个id，这个id是用来对应评论的。这个部分会在测试评论功能的时候细说。<br>permalink_defaults就是各个页面的永久链接格式。<br>pretty_urls这个比较有意思，如果定义了这个选项的话就会把前面的permalink直接覆盖掉，虽然我没有看出来这么做的意义是什么，但是我估计是它框架里面源码的一些调用方式问题。所以如果想要改permalink的话就用这个比较好。<br>后面两个就是url上面显示的东西，不需要可以直接改为false，不过留着也不影响。</p>
+<h3 id="Directory配置"><a href="#Directory配置" class="headerlink" title="Directory配置"></a>Directory配置</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Directory</span></span><br><span class="line"><span class="attr">source_dir:</span> <span class="string">source</span></span><br><span class="line"><span class="attr">public_dir:</span> <span class="string">public</span></span><br><span class="line"><span class="attr">tag_dir:</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">archive_dir:</span> <span class="string">archives</span></span><br><span class="line"><span class="attr">category_dir:</span> <span class="string">categories</span></span><br><span class="line"><span class="attr">code_dir:</span> <span class="string">downloads/code</span></span><br><span class="line"><span class="attr">i18n_dir:</span> <span class="string">:lang</span></span><br><span class="line"><span class="attr">skip_render:</span></span><br></pre></td></tr></table></figure>
+
+<p>这些的话也不太需要更改，因为它的归纳已经分配的很好了，不过要注意一个细节就是最后一个，如果你使用了github SSH来进行发布的话，那么有些不必要的内容可以通过这个组织发布。<br>具体的禁用方式就是把不需要渲染的文件或者文件夹直接使用glob expressions写入即可。其实最好是直接放入同一个文件夹下，然后放入文件加的地址。</p>
+<h3 id="写作配置"><a href="#写作配置" class="headerlink" title="写作配置"></a>写作配置</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Writing</span></span><br><span class="line"><span class="attr">new_post_name:</span> <span class="string">:title.md</span> <span class="comment"># File name of new posts</span></span><br><span class="line"><span class="attr">default_layout:</span> <span class="string">post</span></span><br><span class="line"><span class="attr">titlecase:</span> <span class="literal">false</span> <span class="comment"># Transform title into titlecase</span></span><br><span class="line"><span class="attr">external_link:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span> <span class="comment"># Open external links in new tab</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">site</span> <span class="comment"># Apply to the whole site</span></span><br><span class="line">  <span class="attr">exclude:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="attr">filename_case:</span> <span class="number">0</span></span><br><span class="line"><span class="attr">render_drafts:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">relative_link:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">future:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">highlight:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">line_number:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">auto_detect:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">tab_replace:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line">  <span class="attr">wrap:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">hljs:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">prismjs:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">preprocess:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">line_number:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">tab_replace:</span> <span class="string">&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>一个一个来看，第一个就是所生成的文章的格式和名字模板，一般来说就用md就好了。<br><code>default_layout</code>指的是使用<code>hexo new &quot;filename&quot;</code>生成的文章的默认模板，一般来说post就可以了，当然我们也可以定义自己的模板然后套用。<br><code>titlecase</code>就是改个大小写，看个人喜好开关<br><code>exteral_link</code>就是是否有一个新的网页打开外部链接。就是一个新tab。<br><code>filename_case</code>文件名大小写 0就是不变,1是小写，2是大写<br><code>render_drafts</code>是否渲染草稿（在最终成品网页中展示），建议关闭，毕竟draft只是用来本地测试的。<br><code>post_asset_folder</code>一定要<strong>开启</strong>，这个主要用来放置不同文章的附件，比如图片音频等。开启这个才能使用很多功能，非常重要。<br><code>relative_link</code>把链接改为和根目录的一个地址。这个路径可以简化pathname的书写，但是如果移动文件夹则会导致路径失效，个人建议别开。<br><code>future</code>显示未来的文章，说实话这个部分，没搞懂在干嘛，未来文章也不知道指什么，自己实验了一下也看不出效果。就别动它就好了。<br>剩下的两个都是和代码高亮相关的，主要是通过js的一些设置，这个部分我不是很熟悉，但是具体方式就参考官方文档即可。</p>
+<h3 id="主页配置-amp-分类和标签"><a href="#主页配置-amp-分类和标签" class="headerlink" title="主页配置 &amp; 分类和标签"></a>主页配置 &amp; 分类和标签</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">index_generator:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">&#x27;&#x27;</span>  <span class="comment">#主页的地址，不许要修改</span></span><br><span class="line">  <span class="attr">per_page:</span> <span class="number">10</span> <span class="comment"># 一页显示多少文章</span></span><br><span class="line">  <span class="attr">order_by:</span> <span class="string">-date</span> <span class="comment"># 文章排序方式</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Category &amp; Tag</span></span><br><span class="line"><span class="attr">default_category:</span> <span class="string">uncategorized</span> <span class="comment">#默认标签</span></span><br><span class="line"><span class="attr">category_map:</span> <span class="comment"># 分类别名 </span></span><br><span class="line"><span class="attr">tag_map:</span>   <span class="comment">#标签别名</span></span><br></pre></td></tr></table></figure>
+
+<p>简单的设置，都是字面意思，直接根据需要跟换即可。</p>
+<h3 id="时间与分页"><a href="#时间与分页" class="headerlink" title="时间与分页"></a>时间与分页</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Date / Time format</span></span><br><span class="line"><span class="attr">date_format:</span> <span class="string">YYYY-MM-DD</span></span><br><span class="line"><span class="attr">time_format:</span> <span class="string">HH:mm:ss</span></span><br><span class="line"><span class="comment">## updated_option supports &#x27;mtime&#x27;, &#x27;date&#x27;, &#x27;empty&#x27;</span></span><br><span class="line"><span class="attr">updated_option:</span> <span class="string">&#x27;mtime&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Pagination</span></span><br><span class="line"><span class="comment">## Set per_page to 0 to disable pagination</span></span><br><span class="line"><span class="attr">per_page:</span> <span class="number">10</span></span><br><span class="line"><span class="attr">pagination_dir:</span> <span class="string">page</span></span><br></pre></td></tr></table></figure>
+
+<p>Hexo使用的是Moment.js来获取时间，具体格式和方法就直接参考Moment.js即可。但是我个人的建议是不需要调整，因为这个博客的时间并不是很重要。<br>这里有个小坑，就是下面的分页。这里的per_page和之前的per_page是同一个，如果两个配置不同的话后面的会覆盖前面的。所以建议就保持一致。因为实测下来，<br>有时候会出现错乱的情况。而且这个全局配置非常重要，如果搞的不好整体就会乱码，所以我建议能不动就不动。</p>
+<h3 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Include / Exclude file(s)</span></span><br><span class="line"><span class="comment">## include:/exclude: options only apply to the &#x27;source/&#x27; folder</span></span><br><span class="line"><span class="attr">include:</span></span><br><span class="line"><span class="attr">exclude:</span></span><br><span class="line"><span class="attr">ignore:</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">vexo</span></span><br></pre></td></tr></table></figure>
+
+<p>上面的部分没有什么复杂的，就是在hexo部署的时候，希望hexo包括或者不包括那些文件。这里的小坑就是include和exclude只针对source目录底下的文件。而ignore则会针对全局。<br>那么如果出现了include和ignore中出现了同样的情况，根据就近原则，谁后面出现谁就覆盖前面的。</p>
+<h3 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> </span><br></pre></td></tr></table></figure>
+
+<p>这个部分算是部署成功的重要一环，因为我个人使用的是github，所以就直接使用git，然后要注意一个超级大坑。<br>这里git和冒号直接必须<strong>保证一个空格</strong>，而且就是一个空格。不然整体部署就会失败。包括后面的repo也是需要一个空格。</p>
+<h2 id="简单的使用"><a href="#简单的使用" class="headerlink" title="简单的使用"></a>简单的使用</h2><p>刚才的部分就是全部的配置文件，但是关于不同主题其实还会有不同的配置文件，所以后面在使用主题的时候在详细解释。<br>当我们初始化好了一个hexo文件夹后，就可以开始写入具体的内容了。直接使用<code>hexo new &lt;file_type&gt; &quot;postname&quot;</code>来创建新的文章或者页面。<br>这里要注意一般就是三种形式，pages，draft和post，我们之前的设置是post，所以这里不输入file type的话就会直接创建一个post，因为之前选择开启assert folder<br>所以创建后会在source目录下的_post中加入一个md文件和一个对应的文件夹。具体样子如下  </p>
+<img src="/2022/07/26/hexo%E5%88%9D%E6%8E%A2/hexo2.png" class="" title="This is an example image">   
+
+<p>可以看到每一md都会对应一个同名的文件夹。 打开一个md文件，我们会发现如下结构</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: Hexo 入门</span><br><span class="line">date: 2022-07-21 17:01:14</span><br><span class="line">tags:</span><br></pre></td></tr></table></figure>
+
+<p>这个部分hexo把它称作front matter，用于归类一篇文章。具体的改动方式有很多。<br><code>updated</code> 文件更新日期<br><code>comments</code> 开启文章的评论功能<br><code>tags</code> 标签（不适用于分页）<br><code>categories</code> 分类（不适用于分页）<br><code>permalink</code>    覆盖文章网址 (会覆盖全部配置)<br><code>excerpt</code> Page excerpt in plain text. Use this plugin to format the text<br><code>disableNunjucks</code> Disable rendering of Nunjucks tag <code>&#123;&#123; &#125;&#125;/&#123;% %&#125;</code> and tag plugins when enabled<br><code>lang</code> Set the language to override auto-detection Inherited from _config.yml</p>
+<p>基本上没有什么需要调整的，就看着用就好了。我也只测试了其中的一部分功能。</p>
+<p>当添加完具体内容后，使用<code>hexo g</code>就可以直接在本地完成部署。然后再使用<code>hexo s</code>就可以在本地进行测试了。具体如下</p>
+<img src="/2022/07/26/hexo%E5%88%9D%E6%8E%A2/hexo3.png" class="" title="This is an example image"> 
+
+<p>Hexo会直接使用一个本地端口来测试，当然一定要保证这个端口是空闲的。打开浏览器直接输入就可以看到效果了，注意这里的效果和部署到网上的效果会是完全一致的。所以如果在这里图片不显示，那么部署后也不会显示。</p>
+<h3 id="基本本地部署流程"><a href="#基本本地部署流程" class="headerlink" title="基本本地部署流程"></a>基本本地部署流程</h3><ol>
+<li>使用<code>hexo c</code>清理已有的缓存</li>
+<li>使用<code>hexo g</code>重新本次部署一次</li>
+<li>使用<code>hexo s</code>开启本地服务器，进行本地的浏览</li>
+</ol>
+<h3 id="图片以及音频不显示问题"><a href="#图片以及音频不显示问题" class="headerlink" title="图片以及音频不显示问题"></a>图片以及音频不显示问题</h3><p>这个算是Hexo初探中的一个大坑。基本上网上众说纷纭，我个人的建议是直接参考官方文档。其实这里图片不显示的问题主要是由于hexo里的markdown语法和普通的有区别导致的。<br>我们看下面这个例子</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">一般在一个markdown插入图片我们会使用这种方式</span><br><span class="line">![](<span class="link">.Hexo_images/hexo3.png</span>)</span><br><span class="line">只要我们知道图片的具体位置，就可以直接定位到。</span><br><span class="line"></span><br><span class="line">但是Hexo使用了一种特殊的语法（其实是因为插件导致的）</span><br><span class="line">&#123;% asset<span class="emphasis">_img example.jpg This is an example image %&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>这才是正确的引用方式，其实这里也可以选择在全局设置中开启下面的配置</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">marked:</span></span><br><span class="line">  <span class="attr">prependRoot:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">postAsset:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>这样的话，图片或者文件就会被直接编码在markdown文件中，但是我推荐这样做。因为只有在打开这篇文章的时候才能正确读出图片，如果是在主页或者别的位置，则还是显示不出来。</p>
+<h4 id="需要的一些插件和安装"><a href="#需要的一些插件和安装" class="headerlink" title="需要的一些插件和安装"></a>需要的一些插件和安装</h4><p>Hexo其实并不是原生支持图片的导入，而是通过插件来实现这个，所以需要提前安装插件。那么对于这个问题而言，步骤也比较重要，千万不能出问题，不然可能要全部重来（主要很难定位到安装的位置）。<br>首先，进入Hexo的文件夹下打开git bash。先运行<code>npm install</code>，这一步很关键，虽然hexo的init应该会自动安装npm，但是仍然会出现有些包没有的情况，所以一定要用这个检查一下。然后运行<code>npm install hexo-asset-image --save</code><br>安装完成后，直接使用上面的方式进行调用即可。</p>
+</section>
+    <!-- Tags START -->
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2022/07/21/Generic-Basics/">
+        <span class="nav-arrow">← </span>
+        
+          Generic Basics
+        
+      </a>
+    
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- Utterances START -->
+      <div id="utterances"></div>
+      <script src="https://utteranc.es/client.js"
+        repo="Litter-Qer/repoforcomments"
+        issue-term="title"
+        theme="photon-dark"
+        crossorigin="anonymous"
+        async></script>    
+      <!-- Utterances END -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Hexo-%E5%88%9D%E6%8E%A2"><span class="toc-nav-text">Hexo 初探</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B8%8E%E9%85%8D%E7%BD%AE"><span class="toc-nav-text">开发环境与配置</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%8E%AF%E5%A2%83"><span class="toc-nav-text">环境</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E9%85%8D%E7%BD%AE"><span class="toc-nav-text">配置</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%88%9D%E8%AF%95hexo"><span class="toc-nav-text">初试hexo</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#github"><span class="toc-nav-text">.github</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#node-modules"><span class="toc-nav-text">.node_modules</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#scaffolds"><span class="toc-nav-text">scaffolds</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#source"><span class="toc-nav-text">source</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#themes"><span class="toc-nav-text">themes</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%85%B7%E4%BD%93%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-nav-text">具体配置文件</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#site%E9%85%8D%E7%BD%AE"><span class="toc-nav-text">site配置</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#URL%E8%AE%BE%E7%BD%AE"><span class="toc-nav-text">URL设置</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Directory%E9%85%8D%E7%BD%AE"><span class="toc-nav-text">Directory配置</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%86%99%E4%BD%9C%E9%85%8D%E7%BD%AE"><span class="toc-nav-text">写作配置</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%BB%E9%A1%B5%E9%85%8D%E7%BD%AE-amp-%E5%88%86%E7%B1%BB%E5%92%8C%E6%A0%87%E7%AD%BE"><span class="toc-nav-text">主页配置 &amp; 分类和标签</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%97%B6%E9%97%B4%E4%B8%8E%E5%88%86%E9%A1%B5"><span class="toc-nav-text">时间与分页</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%89%A9%E5%B1%95"><span class="toc-nav-text">扩展</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Deployment"><span class="toc-nav-text">Deployment</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%AE%80%E5%8D%95%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-nav-text">简单的使用</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E6%B5%81%E7%A8%8B"><span class="toc-nav-text">基本本地部署流程</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%9B%BE%E7%89%87%E4%BB%A5%E5%8F%8A%E9%9F%B3%E9%A2%91%E4%B8%8D%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98"><span class="toc-nav-text">图片以及音频不显示问题</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E9%9C%80%E8%A6%81%E7%9A%84%E4%B8%80%E4%BA%9B%E6%8F%92%E4%BB%B6%E5%92%8C%E5%AE%89%E8%A3%85"><span class="toc-nav-text">需要的一些插件和安装</span></a></li></ol></li></ol></li></ol></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'https://litterqer.github.io/2022/07/26/hexo初探/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', '/css/images/error_icon.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== '/css/images/error_icon.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2022 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a target="_blank" rel="noopener" href="https://github.com/yanm1ng">yanm1ng</a>
+    
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      hljs.configure({useBR: true});
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+
+<script src="/js/script.js"></script>
+
+
+  </body>
+</html>
