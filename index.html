@@ -167,6 +167,88 @@
   
     <article class="article-card">
       <h2 class="article-head">
+        <a href="/2022/08/09/Thread-Advance-4/">Thread Advance 4</a>
+      </h2>
+      <p class="article-date">August 9, 2022</p>
+      
+      <div class="article-summary">
+        
+          线程进阶4共享思维 入门假设现在只有一个功能强大的计算机，有两个人想要租用这个计算机。租用费由实际使用时间来决定。假设A想要全天租用计算机，但是一天中A需要吃饭，睡觉，休闲。并不是一直可以使用这个计算机。这样租用的费用就会相对地减少很多。而B如果也想使用这个计算机，ta就必须等到A使用完，这 ...
+        
+      </div>
+      <a class="more" href="/2022/08/09/Thread-Advance-4/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2022/08/09/Thread-Advance-3/">Thread Advance 3</a>
+      </h2>
+      <p class="article-date">August 9, 2022</p>
+      
+      <div class="article-summary">
+        
+          线程进阶3昨天反馈中的验证1234567891011121314151617181920// interrupt supportvoid JavaThread::interrupt() &#123;  // All callers should have &#x27;this&#x27; t ...
+        
+      </div>
+      <a class="more" href="/2022/08/09/Thread-Advance-3/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2022/08/09/Thread-Advance-2/">Thread Advance 2</a>
+      </h2>
+      <p class="article-date">August 9, 2022</p>
+      
+      <div class="article-summary">
+        
+          线程进阶2关于昨天反馈中问题的反思
+
+根据昨天的反馈 ，我重新画了以下CPU中线程的调用过程。
+线程调度问题1CPU 调度，指的是非阻塞等待的可以运行的线程（Java 中对应的是 Runnable），处于一个调度队列，CPU 按照一定算法从调度队列取线程并执行（Running），CPU 时钟 ...
+        
+      </div>
+      <a class="more" href="/2022/08/09/Thread-Advance-2/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2022/08/09/Thread-Advance-1/">Thread Advance 1</a>
+      </h2>
+      <p class="article-date">August 9, 2022</p>
+      
+      <div class="article-summary">
+        
+          线程进阶1并行效率这次使用了JMH作为测试工具，两个方法都预热了3次以排除影响。观察两个方法的完成时间和运行次数。每个方法就是很暴力的单独开启使用一个线程来解决计算总和。
+12345public void run() &#123;    for (int i = 0; i &lt; SIZE ...
+        
+      </div>
+      <a class="more" href="/2022/08/09/Thread-Advance-1/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2022/08/09/Thread-Basics/">Thread Basics</a>
+      </h2>
+      <p class="article-date">August 9, 2022</p>
+      
+        
+  <a href="/tags#Thread" >
+    <span class="tag-code">Thread</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          进程和线程一个程序由两个部分组成——指令和数据。一般情况下，读写数据时，需要把指令加载到CPU，数据加载到内存。
+进程进程实际上就是用来加载指令，管理内存和输入输出的。Oracle官方对进程是这样描述的
+1A process has a self-contained execution en ...
+        
+      </div>
+      <a class="more" href="/2022/08/09/Thread-Basics/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
         <a href="/2022/07/26/hexo%E5%88%9D%E6%8E%A2/">Hexo初探</a>
       </h2>
       <p class="article-date">July 26, 2022</p>
@@ -333,6 +415,14 @@ fields在java class中基本类似于一个类的properties。大部分情况下
 
 <script src="/js/script.js"></script>
 
+
+
+  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
 
   </body>
 </html>

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="LitterQer both cute and handsome">
+  <meta name="keyword" content="java, mySQL">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      Thread Advance 1 | LitterQer
+    
+  </title>
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+  
+  
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+  
+  
+    
+<script src="/js/local-search.js"></script>
+
+
+<meta name="generator" content="Hexo 6.2.0"></head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>LitterQer</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">Projects</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+      
+        <li class="menu-item menu-item-search right-list">
+    <a role="button" class="popup-trigger">
+        <i class="fa fa-search fa-fw"></i>
+    </a>
+</li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">Projects</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+    
+      <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+            <span class="search-icon">
+                <i class="fa fa-search"></i>
+            </span>
+            <div class="search-input-container">
+                <input autocomplete="off" autocapitalize="off"
+                    placeholder="Please enter your keyword(s) to search." spellcheck="false"
+                    type="search" class="search-input">
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa fa-times-circle"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+    
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>Thread Advance 1</h2>
+  <p class="post-date">2022-08-09</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="线程进阶1"><a href="#线程进阶1" class="headerlink" title="线程进阶1"></a>线程进阶1</h1><h2 id="并行效率"><a href="#并行效率" class="headerlink" title="并行效率"></a>并行效率</h2><p>这次使用了JMH作为测试工具，两个方法都预热了3次以排除影响。观察两个方法的完成时间和运行次数。每个方法就是很暴力的单独开启使用一个线程来解决计算总和。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; SIZE ; i++) &#123;</span><br><span class="line">        sum += ARRAY[i];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>第一个方法用了4个线程，每个线程解决4分之一的计算，并且并行运行。第二个方法则使用一个线程计算全部。由于硬件限制，CPU只有4个核心，所以这里的结果不是完全准确的，因为可能有一个核心还需要肩负其它系统日常任务。<br>但是最终结果还是可以看到多线程下速度比单线程快的并不多。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Result &quot;test.SigMulTest.concurrent&quot;:</span><br><span class="line">    0.085 ±(99.9%) 0.411 s/op [Average]</span><br><span class="line">    (min, avg, max) = (0.002, 0.085, 0.239), stdev = 0.107</span><br><span class="line">    CI (99.9%): [≈ 0, 0.496] (assumes normal distribution)</span><br></pre></td></tr></table></figure>
+
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>单核CPU下，即便开启多个线程也还是并发而非并行。并不能实际提高程序的运行效率，但是由于一直交替使用CPU，所以还是可以有限地提高CPU的利用率的。也就是不让一个线程一直占着CPU。<br>但是多核CPU的情况下，并行跑动多个线程。CPU利用率和程序的运行效率会提升，但是同时也带来了硬件要求以及散热的问题。而且由于创建和开启线程需要消耗资源（在内存赋予地址，和调度器通信），所以在小数据的情况下，反而并不会有什么提升。<br>但是当数据量变多，并且数据直接的交互（不同数据直接需要相互计算，操作）提高的时候，多线程就开始有用了。</p>
+<h2 id="创建方法"><a href="#创建方法" class="headerlink" title="创建方法"></a>创建方法</h2><h3 id="直接使用"><a href="#直接使用" class="headerlink" title="直接使用"></a>直接使用</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Thread</span> <span class="variable">t1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Thread</span>(<span class="string">&quot;t1&quot;</span>) &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">// Task to execute</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>直接创建一个线程，通过一个匿名内部类的方式。当然现在可能lambda表示的方式会更多一点。一般来说就实现run这个方法就好了。这里为了搞懂为什么实现run方法就可以让线程直接执行这个任务，又去看了源码中的实现。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (target != <span class="literal">null</span>) &#123;</span><br><span class="line">        target.run();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其实线程类中的run也是实现了runnable接口的方法。再次探究runnable接口和Thread的关系，可以从上面的源码中看出来，原生的run方法其实就是了一个逻辑，如果有可以执行的对象就直接执行，没有就什么也不做。<br>我在runnable的run方法源码中找到了这样一段话</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">When an object implementing interface Runnable is used to create a thread, </span><br><span class="line">starting the thread causes the object&#x27;s run method to be called in that separately executing thread.</span><br></pre></td></tr></table></figure>
+
+<p>这里其实就完整的解释了为什么开启线程需要用start而不是run。因为run会直接在线程中开启一个任务而不是单独开启一个线程。这里我使用下面这个例子来验证</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">runTest</span><span class="params">()</span>&#123;</span><br><span class="line">    log.error(<span class="string">&quot;run启动&quot;</span>);</span><br><span class="line">    <span class="type">Thread</span> <span class="variable">t1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Thread</span>(<span class="string">&quot;t1&quot;</span>)&#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">            log.error(<span class="string">&quot;t1 运行中......&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    t1.run();</span><br><span class="line">    log.error(<span class="string">&quot;t1 结束运行&quot;</span>);</span><br><span class="line">    log.error(<span class="string">&quot;-----------&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">startTest</span><span class="params">()</span>&#123;</span><br><span class="line">    log.error(<span class="string">&quot;start启动&quot;</span>);</span><br><span class="line">    <span class="type">Thread</span> <span class="variable">t1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Thread</span>(<span class="string">&quot;t1&quot;</span>)&#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">            log.error(<span class="string">&quot;t1 运行中......&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    t1.start();</span><br><span class="line">    log.error(<span class="string">&quot;t1 结束运行&quot;</span>);</span><br><span class="line">    log.error(<span class="string">&quot;-----------&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>下面是输出的日志</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">13:39:45.232 [main] ERROR test.RunStartTest - run启动</span><br><span class="line">13:39:45.234 [main] ERROR test.RunStartTest - t1 运行中......</span><br><span class="line">13:39:45.234 [main] ERROR test.RunStartTest - t1 结束运行</span><br><span class="line">13:39:45.234 [main] ERROR test.RunStartTest - -----------</span><br><span class="line">13:39:45.234 [main] ERROR test.RunStartTest - start启动</span><br><span class="line">13:39:45.234 [main] ERROR test.RunStartTest - t1 结束运行</span><br><span class="line">13:39:45.234 [main] ERROR test.RunStartTest - -----------</span><br><span class="line">13:39:45.234 [t1] ERROR test.RunStartTest - t1 运行中......</span><br></pre></td></tr></table></figure>
+
+<p>很明显地看到使用run的程序并没有开启一个线程，而是继续沿用主线程。但是通过start开启的线程则是使用了我自己定义的t1线程。</p>
+<h3 id="通过runnable对象"><a href="#通过runnable对象" class="headerlink" title="通过runnable对象"></a>通过runnable对象</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Runnable</span> <span class="variable">task1</span> <span class="operator">=</span> ()-&gt; log.error(<span class="string">&quot;runnable创建的线程&quot;</span>);</span><br><span class="line"><span class="type">Thread</span> <span class="variable">t</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Thread</span>(task1, <span class="string">&quot;runnable Thread&quot;</span>);</span><br><span class="line">t.start();</span><br></pre></td></tr></table></figure>
+
+<p>使用runnable创建一个对象，然后把runnable对象发给线程，让这个线程去执行这个runnable。这里对应了源码中的target成员。</p>
+<h3 id="callable创建"><a href="#callable创建" class="headerlink" title="callable创建"></a>callable创建</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">FutureTask&lt;Integer&gt; task2 = <span class="keyword">new</span> <span class="title class_">FutureTask</span>&lt;&gt;(()-&gt;&#123;</span><br><span class="line">    log.debug(<span class="string">&quot;task2&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">100</span>;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Thread</span>(task2,<span class="string">&quot;t2&quot;</span>).start();</span><br><span class="line"></span><br><span class="line"><span class="type">Integer</span> <span class="variable">rs</span> <span class="operator">=</span> task2.get();</span><br><span class="line">log.debug(<span class="string">&quot;结果是 &#123;&#125;&quot;</span>,rs);</span><br></pre></td></tr></table></figure>
+
+<p>使用FutureTask可以接受callable类型的参数，这种方式一般用来处理有返回值的情况。FutureTask也是一个略微复杂的创建方式，具体它的一个实现我在稍后分析一下。<br>不过它的主要功能就是处理返回值。</p>
+<h3 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h3><p>创建方法万变不离其宗，都是想办法解决runnable的实现问题。直接改写run方法等于就是重新实现了Thread里的runnable接口，而先创建接口对象则是直接实现了runnable接口。<br>java 8后由于lambda表达式的广泛应用，在定义runnable对象的时候甚至可以直接使用lambda表达式，更加的方便。当然如果一个任务有返回值，那么FutureTask也许是一个比较好的选择。</p>
+<h2 id="FutureTask"><a href="#FutureTask" class="headerlink" title="FutureTask"></a>FutureTask</h2><p>直接看源码，由于成员变量过多，我就直接在代码中展示结果了。这里只是初次分析，下次还会在详细分析里面的结构。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">volatile</span> <span class="type">int</span> state; <span class="comment">// 状态</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> <span class="variable">NEW</span>          <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> <span class="variable">COMPLETING</span>   <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> <span class="variable">NORMAL</span>       <span class="operator">=</span> <span class="number">2</span>;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> <span class="variable">EXCEPTIONAL</span>  <span class="operator">=</span> <span class="number">3</span>;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> <span class="variable">CANCELLED</span>    <span class="operator">=</span> <span class="number">4</span>;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> <span class="variable">INTERRUPTING</span> <span class="operator">=</span> <span class="number">5</span>;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> <span class="variable">INTERRUPTED</span>  <span class="operator">=</span> <span class="number">6</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> Callable&lt;V&gt; callable; <span class="comment">// 需要运行的对象，有返回值，其他和runnable一样</span></span><br><span class="line"><span class="keyword">private</span> Object outcome; <span class="comment">// get方法应该返回的对象，或者应该扔出的Exception。注意这里没有用volatile修饰，说明结果不可被别的线程修改，是受保护的。</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">volatile</span> Thread runner; <span class="comment">// 用来运行callable的线程</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">volatile</span> WaitNode waiters; <span class="comment">// Treiber stack，这里可以直接看成一个链表，规定了等待中的线程</span></span><br></pre></td></tr></table></figure>
+
+<p>其它的重要部分就是get方法只会返回已完成的工作，如果一个工作还未完成则会直接抛出异常。而且在FutureTask中的任务只会被执行一次，除非使用runAndRest。<br>而且已被执行的任务不可被取消。</p>
+<h2 id="交替执行的线程"><a href="#交替执行的线程" class="headerlink" title="交替执行的线程"></a>交替执行的线程</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">exeTest1</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">new</span> <span class="title class_">Thread</span>(()-&gt;&#123;</span><br><span class="line">        log.debug(<span class="string">&quot;t1 running&quot;</span>);</span><br><span class="line">    &#125;,<span class="string">&quot;t1&quot;</span>).start();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">new</span> <span class="title class_">Thread</span>(()-&gt;&#123;</span><br><span class="line">        log.debug(<span class="string">&quot;t2 running&quot;</span>);</span><br><span class="line">    &#125;,<span class="string">&quot;t2&quot;</span>).start();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用上面这段代码模拟线程的交替执行，发现即便是多核心的情况下，似乎也并不是一个并行的方式，这可能是系统的调度器的影响。<br>进一步了解情况，在windows中使用<code>jps</code>来观察线程和进程数。然后使用了<code>taskkill /F /PID &lt;id&gt;</code>的方式杀死一个线程。</p>
+<h3 id="jconsole"><a href="#jconsole" class="headerlink" title="jconsole"></a>jconsole</h3><p>使用了<code>jconsole</code>来监控线程和栈堆的使用。才知道原来java有这么好用的工具，完全没想到。。。</p>
+<h2 id="栈与栈帧"><a href="#栈与栈帧" class="headerlink" title="栈与栈帧"></a>栈与栈帧</h2><p>在JVM中会出现栈，堆和方法区。其中栈的内存就是给线程使用的。当每一个线程启动后，JVM就会为其分配一块栈内存。而每个栈又是由小的栈帧组成的。<br>基本上每次调用新的方法是就会出现一个新的栈帧。而每一个线程同一时间只能有一个active的栈帧，也就是当下正在执行的方法。而每次开启一个新的栈帧又会在栈内存中加入一个局部变量表来保存局部变量。<br>对于main这个线程来说全程会有一个程序计数器，来保存接下来要操作的指令。这里有一个有意思的说法是，当一个栈帧被创建的时候，JVM就已经给它分配好了它可能会需要的内存，而不是在运行到某一行是才加入。<br>但是这个我没想到什么好的方法来验证。当一个栈帧完成了工作后，就会被JVM自动回收释放内存。</p>
+<h3 id="多线程下栈帧的变化"><a href="#多线程下栈帧的变化" class="headerlink" title="多线程下栈帧的变化"></a>多线程下栈帧的变化</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    <span class="type">Thread</span> <span class="variable">t1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Thread</span>(()-&gt;&#123;</span><br><span class="line">        method1(<span class="number">20</span>);</span><br><span class="line">    &#125;,<span class="string">&quot;t1&quot;</span>);</span><br><span class="line">    </span><br><span class="line">    t1.start();</span><br><span class="line">    </span><br><span class="line">    method1(<span class="number">10</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用了上面的代码来模拟多线程下的栈帧问题。直接通过IDEA的debugger来看frames。当暂停在method1的时候，会发现同时有两个线程在运行这个方法，它们当中的局部变量池也不一样。<br>这也说明了JVM在设计的时候考虑到不同线程调用相同方法的问题，把方法单独放在方法区中，这样即便多个栈帧指向某一个方法，也可以完美地解决，而且不用耗费多余的内存。这里还有一个逻辑就是如果进程中有线程没有结束的话，<br>那么整个程序都不会结束。</p>
+<h2 id="上下文切换"><a href="#上下文切换" class="headerlink" title="上下文切换"></a>上下文切换</h2><p>其实就是线程间切换运行，比如一个线程突然暂停，失去了对CPU的占用，然后另一个线程开始占用CPU。这里面可能的情况一般为以下几种，当然它也关联到一个线程的状态比如阻塞还是挂起。</p>
+<ul>
+<li>CPU的时间片用完（串行执行，交替执行）</li>
+<li>垃圾回收（所有线程都需要暂停，等待垃圾回收线程完成工作）</li>
+<li>有高优先级的线程需要开始工作了</li>
+<li>线程自己使用了yield，sleep等方法，主动放弃CPU占用</li>
+</ul>
+<p>当上下文切换发生的时候，一般操作系统需要保存当前的线程状态，并且恢复另一个线程的状态。这个工作一般是由JVM栈中的程序计数器完成的。既然这样的话，每次上下文切换都要记录，无疑会对性能产生影响。<br>所以盲目使用多线程不仅效果不好，还可能导致性能低下。实际上等于在JVM中创建了无线多个新的栈，这样对硬件的压力应该也挺大的。</p>
+<h2 id="再探-start-amp-run"><a href="#再探-start-amp-run" class="headerlink" title="再探 start &amp; run"></a>再探 start &amp; run</h2><p>这里主要是想补充一个新发现，就是start其实并没有直接开启一个线程。而是告诉调度器我这个线程可以开始工作了，还是要等待调度器的调度。所以学到目前为止，我还没有办法规定线程的启动顺序。<br>虽然可以通过设置优先级的方式，但是并能保证，因为源码中说的是，高优先级只是说被选择的概率高，而非保证选择到。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">runTest2</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">Thread</span> <span class="variable">t1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Thread</span>(<span class="string">&quot;t1&quot;</span>)&#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">            log.debug(<span class="string">&quot;t1 运行中......&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="type">Thread</span> <span class="variable">t2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Thread</span>(<span class="string">&quot;t2&quot;</span>)&#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">            log.debug(<span class="string">&quot;t2 运行中......&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    t1.start();</span><br><span class="line">    t2.start();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在一个无线循环中invoke这个方法，会发现t1不总是先于t2开启，甚至有的时候t2还会连续开启。那么这就证明了start只是准备就绪，并不是直接起飞。</p>
+<h3 id="线程的生命周期补充"><a href="#线程的生命周期补充" class="headerlink" title="线程的生命周期补充"></a>线程的生命周期补充</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">startTest</span><span class="params">()</span> &#123;</span><br><span class="line">    log.error(<span class="string">&quot;start启动方法&quot;</span>);</span><br><span class="line">    <span class="type">Thread</span> <span class="variable">t1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Thread</span>(<span class="string">&quot;t1&quot;</span>) &#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">            log.error(getState().name());</span><br><span class="line">            log.error(<span class="string">&quot;t1 运行中.......&quot;</span>);</span><br><span class="line">            log.error(getState().name());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    log.error(t1.getState().name());</span><br><span class="line">    t1.start();</span><br><span class="line">    log.error(t1.getState().name());</span><br><span class="line">    log.error(<span class="string">&quot;t1 结束运行....&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用debug模式控制速度，确保线程会在运行完后进入terminated状态。 得到如下结果</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">17:11:46.285 [main] ERROR test.RunStartTest - start启动方法</span><br><span class="line">17:11:47.184 [main] ERROR test.RunStartTest - NEW</span><br><span class="line">17:11:47.702 [t1] ERROR test.RunStartTest - RUNNABLE</span><br><span class="line">17:11:47.702 [t1] ERROR test.RunStartTest - t1 运行中.......</span><br><span class="line">17:11:47.702 [t1] ERROR test.RunStartTest - RUNNABLE</span><br><span class="line">17:11:50.322 [main] ERROR test.RunStartTest - TERMINATED</span><br><span class="line">17:11:57.916 [main] ERROR test.RunStartTest - t1 结束运行....</span><br></pre></td></tr></table></figure>
+
+<p>现在终于理解了为什么说线程还会有一个new的状态，因为runnable定义是只要可被运行或者正在运行。那么new为什么不能算在runnable里面呢？其实这就是start的工作了，告诉调度器这里已经ok了，线程进入runnable状态。<br>当一个线程完成了方法后就会直接进入terminated等待被垃圾回收。</p>
+</section>
+    <!-- Tags START -->
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2022/08/09/Thread-Basics/">
+        <span class="nav-arrow">← </span>
+        
+          Thread Basics
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2022/08/09/Thread-Advance-2/">
+        
+          Thread Advance 2
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- Utterances START -->
+      <div id="utterances"></div>
+      <script src="https://utteranc.es/client.js"
+        repo="Litter-Qer/repoforcomments"
+        issue-term="title"
+        theme="photon-dark"
+        crossorigin="anonymous"
+        async></script>    
+      <!-- Utterances END -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E7%BA%BF%E7%A8%8B%E8%BF%9B%E9%98%B61"><span class="toc-nav-text">线程进阶1</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%B9%B6%E8%A1%8C%E6%95%88%E7%8E%87"><span class="toc-nav-text">并行效率</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-nav-text">小结</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%88%9B%E5%BB%BA%E6%96%B9%E6%B3%95"><span class="toc-nav-text">创建方法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8"><span class="toc-nav-text">直接使用</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E9%80%9A%E8%BF%87runnable%E5%AF%B9%E8%B1%A1"><span class="toc-nav-text">通过runnable对象</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#callable%E5%88%9B%E5%BB%BA"><span class="toc-nav-text">callable创建</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%B0%8F%E7%BB%93-1"><span class="toc-nav-text">小结</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#FutureTask"><span class="toc-nav-text">FutureTask</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BA%A4%E6%9B%BF%E6%89%A7%E8%A1%8C%E7%9A%84%E7%BA%BF%E7%A8%8B"><span class="toc-nav-text">交替执行的线程</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#jconsole"><span class="toc-nav-text">jconsole</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%A0%88%E4%B8%8E%E6%A0%88%E5%B8%A7"><span class="toc-nav-text">栈与栈帧</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8B%E6%A0%88%E5%B8%A7%E7%9A%84%E5%8F%98%E5%8C%96"><span class="toc-nav-text">多线程下栈帧的变化</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%8A%E4%B8%8B%E6%96%87%E5%88%87%E6%8D%A2"><span class="toc-nav-text">上下文切换</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%86%8D%E6%8E%A2-start-amp-run"><span class="toc-nav-text">再探 start &amp; run</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E8%A1%A5%E5%85%85"><span class="toc-nav-text">线程的生命周期补充</span></a></li></ol></li></ol></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'https://litterqer.github.io/2022/08/09/Thread-Advance-1/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', '/css/images/error_icon.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== '/css/images/error_icon.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2022 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a target="_blank" rel="noopener" href="https://github.com/yanm1ng">yanm1ng</a>
+    
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      hljs.configure({useBR: true});
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+
+<script src="/js/script.js"></script>
+
+
+
+  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+
+  </body>
+</html>

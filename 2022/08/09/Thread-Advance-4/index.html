@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="LitterQer both cute and handsome">
+  <meta name="keyword" content="java, mySQL">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      Thread Advance 4 | LitterQer
+    
+  </title>
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+  
+  
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+  
+  
+    
+<script src="/js/local-search.js"></script>
+
+
+<meta name="generator" content="Hexo 6.2.0"></head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>LitterQer</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">Projects</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+      
+        <li class="menu-item menu-item-search right-list">
+    <a role="button" class="popup-trigger">
+        <i class="fa fa-search fa-fw"></i>
+    </a>
+</li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">Projects</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+    
+      <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+            <span class="search-icon">
+                <i class="fa fa-search"></i>
+            </span>
+            <div class="search-input-container">
+                <input autocomplete="off" autocapitalize="off"
+                    placeholder="Please enter your keyword(s) to search." spellcheck="false"
+                    type="search" class="search-input">
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa fa-times-circle"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+    
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>Thread Advance 4</h2>
+  <p class="post-date">2022-08-09</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="线程进阶4"><a href="#线程进阶4" class="headerlink" title="线程进阶4"></a>线程进阶4</h1><h2 id="共享思维-入门"><a href="#共享思维-入门" class="headerlink" title="共享思维 入门"></a>共享思维 入门</h2><p>假设现在只有一个功能强大的计算机，有两个人想要租用这个计算机。租用费由实际使用时间来决定。<br>假设A想要全天租用计算机，但是一天中A需要吃饭，睡觉，休闲。并不是一直可以使用这个计算机。这样租用的费用就会相对地减少很多。<br>而B如果也想使用这个计算机，ta就必须等到A使用完，这样的话也浪费了很多时间。而且也不够公平。<br>既然这样为了提高利润，不如让ta们轮流使用。但是这里有牵涉到一个问题，运行到一半的数据需要存储，为了最大化收益，我决定把相同的数据存在同一个储存中。<br>这样的话，A和B可以共用数据。这就又出现新的问题，如果A和B不能同时看到数据的变化，那么就会造成数据的错乱，从而导致意想不到的结果。比如A的时间到了，但是A还没有把数据写入储存，<br>而B已经开始对这个数据进行操作，那么最终的结果显然是混乱的。</p>
+<h2 id="Java线程中的共享问题"><a href="#Java线程中的共享问题" class="headerlink" title="Java线程中的共享问题"></a>Java线程中的共享问题</h2><h3 id="线程不安全的例子"><a href="#线程不安全的例子" class="headerlink" title="线程不安全的例子"></a>线程不安全的例子</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">test1</span><span class="params">()</span> <span class="keyword">throws</span> InterruptedException &#123;</span><br><span class="line">    <span class="type">Thread</span> <span class="variable">t1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Thread</span>(()-&gt; &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">5000</span>; i++) &#123;</span><br><span class="line">            counter++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,<span class="string">&quot;t1&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">Thread</span> <span class="variable">t2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Thread</span>(()-&gt; &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">5000</span>; i++) &#123;</span><br><span class="line">            counter--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,<span class="string">&quot;t2&quot;</span>);</span><br><span class="line"></span><br><span class="line">    t1.start();</span><br><span class="line">    t2.start();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 等待所有线程完成</span></span><br><span class="line">    t1.join();</span><br><span class="line">    t2.join();</span><br><span class="line">    log.debug(<span class="string">&quot;counter: &#123;&#125;&quot;</span>, counter);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>因为没有做同步处理，所以导致counter的结果并不是0（极小概率碰到0）。这里直接观察反编译结果</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> 9 getstatic #38 &lt;test/ThreadUnsafeTest.counter : I&gt;</span><br><span class="line">12 iconst_1</span><br><span class="line">13 iadd</span><br><span class="line">14 putstatic #38 &lt;test/ThreadUnsafeTest.counter : I&gt;</span><br></pre></td></tr></table></figure>
+
+<p>可以看到counter++&#x2F;–被分成了4条完全不同的JVM指令。并且每一轮开始的时候是先从static中获取变量，然后做计算，完成后放回。<br>为了详细理解这个部分到底发生了什么问题，我去简单了看了下JMM的模型。</p>
+<h3 id="JMM如何分配线程的内存"><a href="#JMM如何分配线程的内存" class="headerlink" title="JMM如何分配线程的内存"></a>JMM如何分配线程的内存</h3><img src="/2022/08/09/Thread-Advance-4/JMM%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D.png" class="" title="This is an example image">
+
+<p>和之前线程的分配一样，这里只是<strong>JAVA对于内存的处理</strong>，而不是操作系统甚至硬件中的处理方法。其实JAVA中的本地内存模型对应了硬件里面的很多部分，<br>包括内存，缓存，寄存器等。这里我只讨论java本身。从上图来理解刚才的字节码，如果使用<code>getstatic</code>，实际上是从主内存中取出共享变量，然后进行操作，在放回主内存。<br>由于线程是并行的，所以上面的例子可以看成线程1和2同时在读取主内存中的共享变量，所以主内存的共享变量也许还没有完全更新就被读取了。当然这个模式其实也解释了java中的线程要想互相沟通，<br>必须要通过主内存，也就是分为两步——获得数据,返回数据。</p>
+<p>重点：JMM是语言级别的模型，和硬件中的内存分配不是一回事。</p>
+<h2 id="临界区和竞态条件"><a href="#临界区和竞态条件" class="headerlink" title="临界区和竞态条件"></a>临界区和竞态条件</h2><h3 id="临界区-Critical-Section"><a href="#临界区-Critical-Section" class="headerlink" title="临界区 Critical Section"></a>临界区 Critical Section</h3><p>刚才提到的多线程共享资源问题，其实多线程如果只是读取数据而不写入的话，基本也不会出问题。但是不断改变共享变量导致了读取的数据并不准确，就如同的上面例子。<br>那么在java中如果出现了一段代码块，存在对共享资源的多线程读写操作，那么它就被称为<strong>临界区</strong>。</p>
+<h3 id="竞态条件-Race-Condition"><a href="#竞态条件-Race-Condition" class="headerlink" title="竞态条件 Race Condition"></a>竞态条件 Race Condition</h3><p>多线程在临界区内执行，由于代码的执行序列不同而导致结果无法预测，这种情况就被称为竞态条件</p>
+<h2 id="阻塞式解决方案"><a href="#阻塞式解决方案" class="headerlink" title="阻塞式解决方案"></a>阻塞式解决方案</h2><p>为了避免出现竞态条件，java中提供了很多设计思路。其中锁和synchronized关键字又被称为阻塞式解决方案。</p>
+<h3 id="synchronized-关键字"><a href="#synchronized-关键字" class="headerlink" title="synchronized 关键字"></a>synchronized 关键字</h3><p>其实synchronized的本质是一个锁，所有被synchronized修饰的方法都会尝试获得这个锁，如果这个锁被占住了，则会处于阻塞状态（java中为blocked）。而拥有锁的线程会一直运行完当前的内容才会释放锁。<br>同一时间只存在一把锁。这种类型的锁一般称为互斥锁。</p>
+<h4 id="简单实现"><a href="#简单实现" class="headerlink" title="简单实现"></a>简单实现</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Object</span> <span class="variable">lock</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Object</span>(); <span class="comment">// 锁对象</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">synchronized</span> (lock) &#123;</span><br><span class="line">    counter++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>简单来说使用synchronized必须要有一个锁对象，这个对象可以是Object类。其它任何使用同样锁对象的线程想要获取这个锁的时候就会被阻塞，在java中是blocked。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">14 monitorenter</span><br><span class="line">15 getstatic #35 &lt;test/SynchronizedTest.counter : I&gt;</span><br><span class="line">18 iconst_1</span><br><span class="line">19 isub</span><br><span class="line">20 putstatic #35 &lt;test/SynchronizedTest.counter : I&gt;</span><br><span class="line">23 aload_1</span><br><span class="line">24 monitorexit</span><br></pre></td></tr></table></figure>
+
+<p>通过观察字节码文件，可以看到在加入了synchronized后，<code>getstatic</code>前面加入了<code>monitorenter</code>来表示尝试获取钥匙，成功获取则一直占用，直到任务完成。</p>
+<h4 id="抽象理解方式"><a href="#抽象理解方式" class="headerlink" title="抽象理解方式"></a>抽象理解方式</h4><pre class="mermaid">sequenceDiagram
+    participant t1
+    participant t2
+    participant counter
+    participant lock
+    loop
+        Note over t1,lock: both attempt to get the lock
+        lock ->> t2: gets lock
+        activate lock
+        t2 ->> t2: getstatic & iadd
+        t2 ->> t1: CPU clock ends, contextswitch
+        Note over t1,lock: t1 wants to get the lock
+        t1 ->> lock: fails to get the lock (blocked)
+        t2 ->> counter: putstatic counter
+        t2 ->> lock: releases the lock
+        deactivate lock
+    end
+    Note over counter: final value</pre>
+
+<p>synchronized中的锁对象可以想象成一个房间，这个房间只有一个门。房间内最多只可以有一个人。这个过程可以想象成一个线程进入了房间后，就把钥匙拿走并且反锁了房门。<br>但是这里关键的是，即便我把钥匙拿到了，也在房间里，不代表我可以一直在房间里。CPU的时间片还是限制了这个线程的使用时间，当时间片到了之后，线程还是会被踢出房间，但是它仍然拥有钥匙。<br>于是就出现了这样的情况，t1拥有钥匙，但是时间片用完了，t2想进入依然不行。所以t2只能等到t1再次获得时间片并且把任务完成了，才能得t1手里的钥匙。</p>
+<h4 id="一些思考"><a href="#一些思考" class="headerlink" title="一些思考"></a>一些思考</h4><p>原子性：并发三要素，其实synchronized相对完美地解决了原子性的问题。因为同一时间只能有一个线程获取锁，所以一个操作除非全部完成，否则全部回滚。即使我使用stop或者别的方式中途杀死了线程，<br>这个锁依旧不可能被释放，虽然是死锁但也保证了数据的原子性。当然这样并不是最完美的。<br>使用synchronized锁对象的问题：在java中，可以把锁对象理解成，每一个对象都自动获得一个对象锁，而锁对象其实就是刚才的房间。既然这样，如果我使用不同的锁对象那么还是可以同一时间修改同样一个共享变量。<br>这也是为什么sync关键字并不完美。<br>synchronized的方式除了使用对象锁，还可以使用类锁。它们在JVM的底层表现也许会有不同，具体研究请看下文。</p>
+<h2 id="面向对象的保护方式"><a href="#面向对象的保护方式" class="headerlink" title="面向对象的保护方式"></a>面向对象的保护方式</h2><p>其实这个方式包含对象锁，和类锁。先来看一个简单的例子，</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Room</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> <span class="variable">counter</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">increment</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">synchronized</span> (<span class="built_in">this</span>)&#123;</span><br><span class="line">            counter++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">decrement</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">synchronized</span> (<span class="built_in">this</span>)&#123;</span><br><span class="line">            counter--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getCounter</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">synchronized</span> (<span class="built_in">this</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> counter;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这是一个简单的内部类。类的内部所有的方法中（非方法签名），写入synchronized块。而锁对象是this，根据类的定义我们知道this代表的是一个实例，所以这里其实是对象锁。和之前直接创建一个空对象其实并没有区别，只是这种方式把synchronized嵌入了方法中，可以去掉不必要的重复。<br>但是这种方式的缺点就就是，对于每一个需要使用的方法，我都得重写一遍synchronized块，造成了代码的冗余。所以java中通过的方法签名的方式优化了这个功能。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title function_">increment</span><span class="params">()</span> &#123;</span><br><span class="line">    counter++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里直接在成员方法签名里加入了synchronized关键字，在成员方法中，这个步骤相当于对this加锁，和上面的代码等价。但是注意对于静态方法，这个方式就变得不同了，之前讨论过，静态方法在JVM中并不是作为一个实例运行的，而是单独运行。<br>在一个类中的静态方法属于这个类而不是某个实例，所以当在静态方法中加入synchronized的时候，其实是类锁，那么它也就无法完全保证原子性，这也是为什么说synchronized并不能完美地保证原子性。为了验证等价性，我观察了字节码文件。<br>方法签名在字节码中相当于运行的时候在编译synchronized，而直接写成代码块则会在加载的时候就编译。</p>
+<h3 id="一点小思考"><a href="#一点小思考" class="headerlink" title="一点小思考"></a>一点小思考</h3><p>如果一个类中有的加入了关键字，有的没加，那么没加入的就会破坏线程安全，所以一般来说要加全加。这也许就是为什么很多线程安全的集合几乎每个操作方法都加入了synchronized。<br>如果同时出现类锁和对象锁，那么谁的优先级会更高，或者说谁才是真正控制锁的那个人呢？其实这个问题本身就不成立，因为他们呢锁住的对象就不一样，对象锁是对实例的禁锢，但是类锁会锁住类。所以最终的结果是，并行执行，互不干扰（不互斥）。<br>这里我个人的理解，锁其实锁住的是操作过程，而不是成员变量，因为JMM中每个线程还是使用的局部变量表，它们只是通过主内存交换了信息。</p>
+<h3 id="JVM如何处理"><a href="#JVM如何处理" class="headerlink" title="JVM如何处理"></a>JVM如何处理</h3><p>先来看字节码</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">14 monitorenter</span><br><span class="line">15 getstatic #80 &lt;test/SynchronizedTest.counter : I&gt;</span><br><span class="line">18 iconst_1</span><br><span class="line">19 isub</span><br><span class="line">20 putstatic #80 &lt;test/SynchronizedTest.counter : I&gt;</span><br><span class="line">23 aload_1</span><br><span class="line">24 monitorexit</span><br><span class="line">25 goto 33 (+8)</span><br><span class="line">28 astore_2</span><br><span class="line">29 aload_1</span><br><span class="line">30 monitorexit</span><br></pre></td></tr></table></figure>
+
+<p>很明显，JVM通过<code>monitorenter</code>和<code>monitorexit</code>指令来控制锁的归属权。深入了解底层，monitor翻译过来就是监视器，它会监视每一个锁的计数器。而每一个类或者实例只能有一个计数器（锁），并且只会被唯一监视器监视。<br>在同一时间，一个监视器只能被一个线程获得。如此，当一个线程想要获得锁，就会发生三种情况：</p>
+<ul>
+<li>计数器为0，目前还没有被获得，那这个线程立刻获得锁，并且计数器+1。别的线程想要获得锁必须等待计数器再次归零</li>
+<li>如果monitor拿到了锁的所有权，又重入了这把锁，那锁计数器就会累加成2。根据重入的次数会一直累加</li>
+<li>锁经被别的线程占用，只能等待别的锁</li>
+</ul>
+<p>相对地，一个线程想要释放锁就等于把计数器减一直到减到0为止。</p>
+<p>这里重入的意思其实就是再次用到了这个锁，比如有三个synchronized的成员方法，它们是扣在一起的，如下图所示。</p>
+<pre class="mermaid">graph LR
+    a(Method a) --> b(Method b)
+    b --> c(Method c)</pre>
+
+<p>那么当线程调用a的时候，自动获得监视器锁，然后在a调用b，c则不会被阻塞，可直接重入这个锁。当bc结束时，直接释放监视器锁。</p>
+<h2 id="synchronized弃用的简单理解"><a href="#synchronized弃用的简单理解" class="headerlink" title="synchronized弃用的简单理解"></a>synchronized弃用的简单理解</h2><p>这里参考了这篇文章的内容以及一些mutex底层的详解：<a target="_blank" rel="noopener" href="https://pdai.tech/md/java/thread/java-thread-x-key-synchronized.html#%E5%AF%B9%E8%B1%A1%E9%94%81">synchronized解析</a><br>实际上，JVM的<code>monitorenter</code>一类的指令是依赖操作系统中的Mutex lock实现的。最简单的操作原理是一个while循环，一直等待所释放，后来出现了把一个线程挂起等待的方式。但是即便这样，挂起一个线程的时候，会从用户态切换到内核态来执行。这种切换的代价一般认为是很大的。<br>如果同步方法只是单线程执行，那么这种切换不仅代价巨大，而且也没有任何必要。java 6之后对锁进行了大量优化，相对缓解了一些压力，但是仍然不够。具体关于锁的优化会放在后面的反思中讨论。</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>本次反思主要讨论了java中共享变量可能带来的问题，以及如何处理这些问题。简单的从JVM的角度研究了synchronized关键字，包括对JMM的入门。由于锁的机制很复杂，而且环环相扣，所以后面会慢慢补充完整。<br>目前一些理解可能不太成熟。</p>
+</section>
+    <!-- Tags START -->
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2022/08/09/Thread-Advance-3/">
+        <span class="nav-arrow">← </span>
+        
+          Thread Advance 3
+        
+      </a>
+    
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- Utterances START -->
+      <div id="utterances"></div>
+      <script src="https://utteranc.es/client.js"
+        repo="Litter-Qer/repoforcomments"
+        issue-term="title"
+        theme="photon-dark"
+        crossorigin="anonymous"
+        async></script>    
+      <!-- Utterances END -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E7%BA%BF%E7%A8%8B%E8%BF%9B%E9%98%B64"><span class="toc-nav-text">线程进阶4</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%85%B1%E4%BA%AB%E6%80%9D%E7%BB%B4-%E5%85%A5%E9%97%A8"><span class="toc-nav-text">共享思维 入门</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Java%E7%BA%BF%E7%A8%8B%E4%B8%AD%E7%9A%84%E5%85%B1%E4%BA%AB%E9%97%AE%E9%A2%98"><span class="toc-nav-text">Java线程中的共享问题</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%BA%BF%E7%A8%8B%E4%B8%8D%E5%AE%89%E5%85%A8%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="toc-nav-text">线程不安全的例子</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#JMM%E5%A6%82%E4%BD%95%E5%88%86%E9%85%8D%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%86%85%E5%AD%98"><span class="toc-nav-text">JMM如何分配线程的内存</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%B4%E7%95%8C%E5%8C%BA%E5%92%8C%E7%AB%9E%E6%80%81%E6%9D%A1%E4%BB%B6"><span class="toc-nav-text">临界区和竞态条件</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%B4%E7%95%8C%E5%8C%BA-Critical-Section"><span class="toc-nav-text">临界区 Critical Section</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%AB%9E%E6%80%81%E6%9D%A1%E4%BB%B6-Race-Condition"><span class="toc-nav-text">竞态条件 Race Condition</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E9%98%BB%E5%A1%9E%E5%BC%8F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-nav-text">阻塞式解决方案</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#synchronized-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-nav-text">synchronized 关键字</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0"><span class="toc-nav-text">简单实现</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E6%8A%BD%E8%B1%A1%E7%90%86%E8%A7%A3%E6%96%B9%E5%BC%8F"><span class="toc-nav-text">抽象理解方式</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83"><span class="toc-nav-text">一些思考</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%BF%9D%E6%8A%A4%E6%96%B9%E5%BC%8F"><span class="toc-nav-text">面向对象的保护方式</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%80%E7%82%B9%E5%B0%8F%E6%80%9D%E8%80%83"><span class="toc-nav-text">一点小思考</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#JVM%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86"><span class="toc-nav-text">JVM如何处理</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#synchronized%E5%BC%83%E7%94%A8%E7%9A%84%E7%AE%80%E5%8D%95%E7%90%86%E8%A7%A3"><span class="toc-nav-text">synchronized弃用的简单理解</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-nav-text">小结</span></a></li></ol></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'https://litterqer.github.io/2022/08/09/Thread-Advance-4/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', '/css/images/error_icon.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== '/css/images/error_icon.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2022 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a target="_blank" rel="noopener" href="https://github.com/yanm1ng">yanm1ng</a>
+    
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      hljs.configure({useBR: true});
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+
+<script src="/js/script.js"></script>
+
+
+
+  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+
+  </body>
+</html>
